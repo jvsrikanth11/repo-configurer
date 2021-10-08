@@ -12,7 +12,7 @@ def encrypt(public_key: str, secret_value: str) -> str:
     encrypted = sealed_box.encrypt(secret_value.encode("utf-8"))
     return b64encode(encrypted).decode("utf-8")
 
-public_key = "$PUBLIC_KEY"
+public_key = "++BHjPifxMH2Y8p3K6Y7mM94OwW0EGkkgZQesDXeKF8="
 
 print("APP_KEY=", encrypt(public_key, "$APP_KEY"))
 print("ACCESS_TOKEN=", encrypt(public_key, '$ACCESS_TOKEN'))
