@@ -14,4 +14,4 @@ def encrypt(public_key: str, secret_value: str) -> str:
 
 public_key = "++BHjPifxMH2Y8p3K6Y7mM94OwW0EGkkgZQesDXeKF8="
 
-print("APP_KEY=", encrypt(public_key, "$APP_KEY"))
+print("APP_KEY=", encrypt(public_key, "abc@123"))
