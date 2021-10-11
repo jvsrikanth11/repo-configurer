@@ -1,0 +1,25 @@
+# action.yml
+name: "Secrets Sync Action"
+branding:
+  icon: 'copy'  
+  color: 'red'
+description: "Copies secrets from the action's environment to many other repos."
+inputs:
+  github_token:
+    description: "Token to use to get repos and write secrets"
+    required: true
+  github_api_url:
+    description: |
+      Override default GitHub API URL. When not provided, the action will attempt
+      to use an environment variable provided by the GitHub Action runner environment
+      defaults.
+    required: false
+  secrets:
+    description: |
+      New line deliminated regex expressions to select values from `process.env`. 
+      Use the action env to pass secrets from the repository in which this action 
+      runs with the `env` attribute of the step.
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
