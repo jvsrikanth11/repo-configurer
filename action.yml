@@ -20,6 +20,12 @@ inputs:
       Use the action env to pass secrets from the repository in which this action 
       runs with the `env` attribute of the step.
     required: true
+  environment:
+    default: ""
+    description: |
+      If this value is set, the action will set the secrets to the repositories 
+      environment with the name of this value.
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'
